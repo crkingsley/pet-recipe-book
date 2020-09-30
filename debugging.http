@@ -1,0 +1,13 @@
+### testing GET recipes
+GET http://localhost:5000/api
+
+### testing POST new recipe
+POST  http://localhost:5000/api/add
+Content-Type: application/json
+
+{
+    "user_id": 1,
+    "name": "Cat Crunchies",
+    "ingredients": "1 egg, 1/2 cup flour, minced organ meat",
+    "directions": "1. Do step #1 then step #2"    
+}
