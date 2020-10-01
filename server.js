@@ -1,4 +1,4 @@
-const { getAllRecipes, createRecipe } = require('./controllers/Recipes')
+const { getAllRecipes, createRecipe, IndividualRecipe } = require('./controllers/Recipes')
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -16,6 +16,7 @@ app.use(bodyParser());
 
 // home route
 app.get('/api', getAllRecipes);
+app.get('/api/recipe/:id', IndividualRecipe);
 app.post('/api/add', createRecipe);
 
 // start server

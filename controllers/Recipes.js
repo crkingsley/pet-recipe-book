@@ -5,6 +5,13 @@ const  getAllRecipes = async (req, res) => {
     return res.send(allRecipes)
 }
 
+const IndividualRecipe = async (req, res) => {
+    const id = req.params.id
+    console.log(id)
+    const singleRecipe = await models.Recipes.findOne({ where: {id} })
+    return res.send(singleRecipe)
+}
+
 const createRecipe = async (req, res) => {
     try {
     const newRecipe = await models.Recipes.create(req.body);
@@ -16,5 +23,6 @@ const createRecipe = async (req, res) => {
 
 module.exports = {
     getAllRecipes,
-    createRecipe
+    createRecipe,
+    IndividualRecipe
 }

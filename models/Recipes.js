@@ -18,7 +18,7 @@ const Recipes = (connection, Sequelize) => connection.define('recipes', {
     }
 },
 
-{defaultScope: {attributes: {exclude: ['id', 'createdAt', 'updatedAt']}}},
+{defaultScope: {attributes: {exclude: ['createdAt', 'updatedAt']}}},
 {paranoid: true}
 )
 
